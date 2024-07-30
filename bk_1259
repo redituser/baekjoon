@@ -1,0 +1,60 @@
+//소요시간 1시간
+package bk_1259;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		boolean tf = true;
+		boolean tf1 = false;
+		
+		while(tf) {
+			
+			
+			
+			int a = sc.nextInt();
+			
+			String b = Integer.toString(a);
+			
+			String []array = new String[b.length()];
+			
+			for (int i = 0; i < array.length; i++) {
+				array[i] = Character.toString(b.charAt(i));
+			}
+				
+			if(a == 0) {
+				tf = false;
+			}else {
+				
+				for (int i = 0; i < array.length/2; i++) {
+					if(array[i].equals(array[array.length - 1 - i])) {
+						tf1 = true;
+						
+					}else {
+						tf1 = false;
+						break;
+					}
+					
+					
+				}
+
+				if(tf1 == true) {
+					System.out.println("yes");
+				}else {
+					System.out.println("no");
+				}
+				
+				
+			}
+			
+		}
+		
+		
+	}
+	
+	
+	
+}
