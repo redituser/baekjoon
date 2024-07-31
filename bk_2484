@@ -1,0 +1,117 @@
+//소요시간 3시간 30분
+
+package bk_2484;
+
+import java.util.Scanner;
+
+public class Sub {
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		int person = sc.nextInt();
+		int maxPoint = 0;
+		
+		
+		
+		for (int i = 0; i < person; i++) {
+			int count = 0;
+			int max = 0;
+			int []arr = new int[4];
+			
+			for (int j = 0; j < arr.length; j++) {
+				arr[j] = sc.nextInt();
+			}
+			
+			count = 0;
+			
+			for (int j = 0; j < arr.length; j++) {
+				for (int k = j+1; k < arr.length; k++) {
+					if(arr[j] == arr[k]) {
+						count++;
+					}
+				}
+				
+				
+				if(max < count) {
+					max = count;
+				}
+				
+			}
+			
+			
+			
+			
+			int point = 0;
+			
+            if (max == 6) {
+                // 4개의 주사위가 모두 같은 경우
+                point = 50000 + arr[0] * 5000;
+            } else if (max == 3) {
+                // 3개의 주사위가 같은 경우
+               
+            	for (int j = 0; j < arr.length; j++) {
+					for (int j2 = 0; j2 < arr.length; j2++) {
+						if(arr[j] == arr[j2]) {
+							count++;
+							if(count == 3) {
+								point = 10000 + arr[j] * 1000;
+								break;
+							};
+						}
+					}
+				}
+            	count = 0;
+			
+            }else if(max == 2) {
+            	//같은 주사위가 두쌍일때
+            	int temp = 0;
+            	for (int j = 0; j < arr.length; j++) {
+					for (int j2 = j+1; j2 < arr.length; j2++) {
+						if(arr[j] > arr[j2]) {
+							 temp = arr[j] ;
+							 arr[j] = arr[j2];
+							arr[j2] = temp;
+							}
+					}
+				}
+            	
+            	point = 2000 + arr[0] * 500 +  arr[3] * 500;
+            	
+            }else if(max == 1) {
+            	//같은 주사위가 한쌍일때
+   
+            	for (int j = 0; j < arr.length; j++) {
+					for (int j2 = j+1; j2 < arr.length; j2++) {						
+						if(arr[j] == arr[j2]) {
+							point = 1000 + arr[j] * 100;
+							break;
+						}
+					}
+				}
+            	
+            }else if(max == 0) {
+            	int temp = 0;
+            	for (int j = 0; j < arr.length; j++) {
+					for (int j2 = j+1; j2 < arr.length; j2++) {
+						if(arr[j] > arr[j2]) {
+							 temp = arr[j] ;
+							 arr[j] = arr[j2];
+							arr[j2] = temp;
+							}
+					}
+				}
+            	point = arr[arr.length -1] * 100;
+            	
+            }
+			
+            if (point > maxPoint) {
+                maxPoint = point;
+            }
+			
+		}
+		
+		System.out.println(maxPoint);
+		
+	}
+	
+}
+
