@@ -1,0 +1,45 @@
+//소요시간 3시간
+
+package bk_1526;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		int max = 0;
+		boolean tf = false;
+		int c = 0;
+		
+		
+		for (int i = n; i > 0; i--) {
+			String a = Integer.toString(i);
+			tf = true;
+			StringBuilder sb = new StringBuilder();
+			
+			for (int j = 0; j < a.length(); j++) {
+				if( a.charAt(j) == '7' || a.charAt(j) =='4') {
+					sb.append(a.charAt(j));
+					
+					
+				}else {
+					
+					tf = false;			
+					break;
+			}
+		}
+			
+			if(tf) {
+				max = Integer.parseInt(sb.toString());
+					break;
+				}
+			}
+			System.out.println(max);
+			
+	}
+		
+
+}
+
