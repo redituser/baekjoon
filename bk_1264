@@ -1,0 +1,53 @@
+//소요시간 2시간
+
+package bk_1264;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);		
+		int count = 0;		
+		char [] arr = {'a','e','i','o','u'};
+		
+			
+		while(true) {
+			
+		String str =  sc.nextLine().toLowerCase();
+		String[] str1 = str.split("[?.!]");
+		
+		if(str.equals("#") ) {
+			break;
+		}
+		
+		
+			
+		for(String str2 : str1) {
+			for (int i = 0; i < str2.length(); i++) {
+				for (int j = 0; j < arr.length; j++) {
+					if(str2.charAt(i) == arr[j]) {
+						count++;
+					}
+				}
+				
+			}
+	
+		}
+		
+	
+		
+		
+		System.out.println(count);
+		count = 0;
+		}
+		
+		
+			
+		
+		
+	}
+	
+	
+	
+	
+}
