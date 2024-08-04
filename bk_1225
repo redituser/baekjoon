@@ -1,0 +1,34 @@
+//소요시간 40분
+
+package bk_1225;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String [] strArr = sc.nextLine().split(" ");
+		int []numarr1 = new int[strArr[0].length()];
+		int []numarr2 = new int[strArr[1].length()];
+		int sum = 0;
+		
+		for (int i = 0; i < strArr[0].length(); i++) {
+			numarr1[i] = Character.getNumericValue(strArr[0].charAt(i));
+		}
+		
+		for (int i = 0; i < strArr[1].length(); i++) {
+			numarr2[i] = Character.getNumericValue(strArr[1].charAt(i));
+		}
+		
+		
+		for (int i = 0; i < numarr1.length; i++) {
+			for (int j = 0; j < numarr2.length; j++) {
+				
+				sum += numarr1[i] * numarr2[j];
+				
+			}
+		}
+		
+		System.out.println(sum);
+	}
+}
