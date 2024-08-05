@@ -1,0 +1,37 @@
+//소요시간 1시간 30분
+
+package bk_2028;
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        String[] arr = new String[num];
+
+        for (int i = 0; i < num; i++) {
+            int a = sc.nextInt();
+
+            arr[i] = Integer.toString(a*a);
+            String b = Integer.toString(a);
+            boolean tf = true;
+
+            for (int j = arr[i].length()-1, k = b.length()-1; k >= 0; k--, j--) {
+                if (b.charAt(k) != arr[i].charAt(j)) {
+                    tf = false;
+                    break;
+                }
+            }
+
+            if (tf) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+
+        sc.close();
+    }
+}
