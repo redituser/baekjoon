@@ -1,0 +1,35 @@
+//소요시간 40분
+//백준에 내니 StringIndexOutOfBounds 가 뜸 하지만 내 컴퓨터에서는 잘 돌아감
+
+package bk_1919;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		String str1 = sc.nextLine();
+		int count = 0;
+		StringBuilder sb1 = new StringBuilder(str);
+		StringBuilder sb2 = new StringBuilder(str1);
+		
+		for (int i = 0; i < sb1.length(); i++) {
+			for (int j = 0; j < sb2.length(); j++) {
+				if(sb1.charAt(i) == sb2.charAt(j)) {
+					sb1.deleteCharAt(i);
+					sb2.deleteCharAt(j);
+					count++;
+			}
+				
+			}
+		}
+		
+		int a = (sb1.length() - count) + (sb2.length() - count);
+		System.out.println(a);
+		
+		
+	}
+				
+	}
+
