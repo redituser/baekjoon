@@ -1,0 +1,54 @@
+//소요시간 30분
+// 하지만 이 코드로는 작동하지만 시간초과가 뜸 (수정예정)
+
+package bk_1712;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		String[] str = sc.nextLine().split(" ");
+		int []arr = new int[str.length];
+		long j = 0;
+		boolean tf = true;
+		
+		
+		for (int i = 0; i < str.length; i++) {
+			arr[i] = Integer.parseInt(str[i]);
+		}
+		
+		
+		if(arr[arr.length-1] < arr[1]) {
+			System.out.println(-1);
+		}
+		
+		while(tf) {
+			
+			if((arr[0]+arr[1]*j) <= arr[2] * j) {
+				if((arr[0]+arr[1]*j) == arr[2] * j ) {
+				System.out.println(j+1);
+				tf = false;
+				break;
+				}else {
+					System.out.println(j);
+					tf = false;
+					break;
+				}
+				
+				
+			}else {
+				j++;
+			}
+			
+		}
+		
+		
+		
+		
+	
+	}
+
+}
