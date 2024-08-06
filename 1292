@@ -1,0 +1,42 @@
+//소요시간 4시간
+
+package bk_1292;
+
+import java.util.Scanner;
+
+public class  Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//3 7
+		//1,2,2,3,3,3,4,4,4,4,5,5,5,5,5
+		//3 4 5 6 7 
+		String[] str = sc.nextLine().split(" ");
+		int [] arr = new int[str.length];
+		int [] arr1 = new int[1001];
+		
+		for (int i = 0; i < str.length; i++) {
+			arr[i] = Integer.parseInt(str[i]);
+		}
+		
+		int index = 0;
+		for (int i = 1; i <= arr1.length; i++) {
+			for (int j = 0; j < i && index <= 1000; j++) {
+				arr1[index] = i;
+				index++;
+			}
+		}
+		
+		
+		int sum = 0;
+		for (int i = arr[0]; i <= arr[1]; i++) {
+			sum += arr1[i-1];
+		}
+		System.out.println(sum);
+		
+			}
+		}
+		
+		
+		
+		
