@@ -1,0 +1,77 @@
+package bk_1668;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int [] arr = new int[n];
+		boolean tf = true;
+		
+		
+		
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		
+
+		int left = 0;
+		int right = 0;
+		int max = arr[0];
+		
+		
+		
+		for (int i = 0; i < arr.length; i++) {
+			if(max < arr[i]) {
+				max = i;
+			}
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i] == arr[max]) {
+				tf = true;
+			}else {
+				tf = false;
+				break;
+			}
+		}
+		
+		if(tf == true) {
+			System.out.println(left = 1);
+			System.out.println(right = 1);
+		}else {
+		
+		
+	
+		for (int i = 0; i < max; i++) {
+			if(arr[i] < arr[i+1]) {
+				left++;
+			if(arr[i+1] == arr[max]) {
+				break;
+			
+			}
+			}
+		}
+		left ++;
+		
+		
+		for (int i =arr.length-1; i > max; i--) {
+			if(arr[i] < arr[i-1]) {
+				right ++;
+				if(arr[i] == arr[max]) {
+					break;
+				}
+			}
+		}
+		right ++;
+		
+		
+		
+		System.out.println(left);
+		System.out.println(right);
+		
+		}
+	}
+}
