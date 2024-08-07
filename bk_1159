@@ -1,0 +1,44 @@
+//소요시간 2시간
+
+package bk_1159;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		sc.nextLine();//개행 비우기
+		String []arr = new String[n];
+		int []alphabet = new int[26];
+		
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextLine();
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			char a = arr[i].charAt(0);
+			alphabet[a - 'a']++;		
+		}
+		boolean tf = true;
+		for (int i = 0; i < alphabet.length; i++) {
+			if(alphabet[i] > 5) {
+				System.out.println((char)i + 'a');
+				tf = true;
+			}
+		}
+		
+		if(!tf) {
+			System.out.println("PREDAJA");
+		}
+		
+		
+		
+		
+		
+		
+		}		
+	}
+
