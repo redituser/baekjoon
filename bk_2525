@@ -1,0 +1,41 @@
+//소요시간 30분
+
+package bk_2525;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int[] arr = new int[2];
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		int num = sc.nextInt();
+		
+		int a = 0;
+		int b = 0;
+		
+		if(arr[1] + num >= 60) {
+			 a = (arr[1] + num)/60;
+			 b = (arr[1] + num)%60;
+			
+			 arr[0] += a;
+			
+			 if(arr[0] >= 24) {
+				 arr[0] %= 24;
+			 }
+				
+			 System.out.println(arr[0] + " " + b);
+		
+		}else if(arr[1] + num < 60){
+			int c = arr[1] + num;
+			System.out.println(arr[0] + " " + c);
+		}
+	}
+
+}
