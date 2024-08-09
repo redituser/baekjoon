@@ -1,0 +1,45 @@
+//프로그램에서는 잘돌아가지만 백준에서는 시간초과가 뜸 
+// 소요시간 20분
+
+package bk_2869;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int [] arr = new int[3];
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		int a = arr[0];
+		int b = arr[1];
+		int v = arr[2];
+		int total = 0;
+		int count = 0;
+		boolean tf = true;
+		
+		
+		
+		while(tf) {
+				
+			
+			count ++;
+			total = total + a +(-b);
+			 
+			 
+			if( total + a >= v) {
+				count ++;
+				tf = false;
+				break;
+			}
+			
+		}
+		
+		System.out.println(count);
+		
+		
+	}
+
+}
