@@ -1,0 +1,47 @@
+//2시간 10분
+
+package bk_1037;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int []arr = new int[a];
+		int []arr1 = new int[a];
+		
+		for (int i = 0; i < a; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr1[i] = arr[0] * arr[i];
+		}
+		
+		
+		
+		for (int i = 0; i < arr1.length; i++) {
+			int count = 0;
+			for (int j = 0; j < arr1.length; j++) {
+				if(arr1[i] % arr[j] ==0) {
+				int c = arr1[i] / arr[j];
+				for (int k = 0; k < arr.length; k++) {
+					if( c == arr[k]) {
+						count ++;
+						break;
+					}
+				}
+			}
+		}
+			  if (count == arr.length) {
+	                System.out.println(arr1[i]);
+	                break;
+	            }
+	}
+		
+		
+		
+	}
+
+}
