@@ -1,0 +1,32 @@
+//1시간
+package bk_1357;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] str = sc.nextLine().split(" ");
+		
+		
+		for (int i = 0; i < str.length; i++) {
+			StringBuilder sb = new StringBuilder();
+			for (int j = str[i].length()-1; j >= 0; j--) {
+				 sb.append(Character.toString(str[i].charAt(j)));
+			}
+			str[i] = sb.toString();
+		}
+		
+		
+		int sum = Integer.parseInt(str[0]) + Integer.parseInt(str[1]);
+		String sumString = Integer.toString(sum);
+		
+		StringBuilder ab = new StringBuilder();
+		for (int i = sumString.length()-1; i >= 0; i--) {
+			ab.append(sumString.charAt(i));
+		}
+		System.out.println(ab.toString());
+		
+	}
+
+}
