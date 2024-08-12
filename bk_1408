@@ -1,0 +1,60 @@
+//소요시간 2시간 40분
+
+package bk_1408;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String []str = sc.nextLine().split(":");
+        String []str1 = sc.nextLine().split(":");
+
+        int hour = Integer.parseInt(str[0]);
+        int minute = Integer.parseInt(str[1]);
+        int second = Integer.parseInt(str[2]);
+
+        int hourcount = 0;
+        int minutecount = 0;
+        int secondcount = 0;
+
+        boolean tf = true;
+
+        while(tf) {
+            second++;
+            secondcount++; // 총 소요된 시간
+
+            if(second == 60) {
+                second = 0;
+                minute++;
+                minutecount++;
+            }
+
+            if(minute == 60) {
+                minute = 0;
+                hour++;
+                hourcount++;
+            }
+
+            if(hour == 24) {
+                hour = 0;
+            }
+
+            if(hour == Integer.parseInt(str1[0]) &&
+               minute == Integer.parseInt(str1[1]) &&
+               second == Integer.parseInt(str1[2])) {
+                tf = false;
+            }
+        }
+        
+        hourcount = secondcount / 3600;
+        minutecount = (secondcount % 3600) / 60;
+        secondcount = secondcount % 60;
+
+        System.out.println(hourcount + ":" + minutecount + ":" + secondcount);
+
+        
+        
+    }
+}
