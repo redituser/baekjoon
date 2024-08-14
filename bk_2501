@@ -1,0 +1,36 @@
+//30분
+
+package bk_2501;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[2];
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		int a = arr[0];
+		int count = 0;
+		
+		int []arr1 = new int[a];
+		
+		for (int i = 1; i <= a; i++) {
+			if(a % i == 0) {
+			arr1[count] = i;
+			count ++;
+			}	
+		}
+		if(count < arr[1]) {
+			System.out.println(0);
+		}else {
+		System.out.println(arr1[arr[1]-1]);
+		}
+		
+		
+	}
+
+}
