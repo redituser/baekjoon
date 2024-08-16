@@ -1,0 +1,51 @@
+//미완
+
+package bk_1181;
+
+import java.util.Scanner;
+
+public class Main {
+		public static void main(String[] args) {
+			Scanner sc =new Scanner(System.in);
+			int a = sc.nextInt();
+			String []arr = new String[a];
+			char []alphabat = new char[26];
+			
+			for (int i = 0; i < a; i++) {
+				arr[i] = sc.nextLine();
+			}
+			
+			
+			
+			
+			for (int i = 0; i < alphabat.length; i++) {
+				alphabat[i] = (char)(i+'a');
+			}
+			
+			long[] values = new long[a];
+			for (int i = 0; i < arr.length; i++) {
+				long value = 0;
+				for (int j = 0; j < arr[i].length(); j++) {
+					for (int k = 0; k < alphabat.length; k++) {
+						if(arr[i].charAt(j) == alphabat[k]) {
+							value = value*5 + k; 
+						}
+					}
+					
+				}
+				values[i] = value;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+			}
+			
+		}
+	
